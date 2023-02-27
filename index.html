@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        body{
+  background-color:#eeeeee;
+  font-family: 'Inter', sans-serif;
+}
+.poke-type{
+  background-color:#F85888;
+}
+
+.poke-card{
+  background-color:#fafafa;
+  border-radius: .7rem;
+  height:20rem;
+  width:12rem;
+}
+
+.poke-card-right{
+    margin-top: 6rem;
+    padding-top: 5rem !important;
+    background-color:#fafafa;
+    border-radius: .7rem;
+    position: relative;
+}
+
+.poke-card-right img{
+   
+    width: 20rem;
+    height: 20rem;
+}
+.btn{
+    pointer-events: none;
+}
+.top-card{
+    margin-bottom: 30px;
+    background-color: #fafafa;
+    height: 3rem;
+}
+#abilities-chart{
+    height: 200px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.poke-search{
+    height: 3rem;
+    border: none !important;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+               <div class="row">
+            <div class="col">
+                <div class="top-card"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col left-side">
+                <div class="row">
+                  <input type="text" placeholder="Enter a Pokémon Name or Number" class="form-control poke-search fw-bold">
+                  <p class="mt-2">Sort By</p>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card text-center poke-card p-3 border-0 shadow-sm mr-2 mt-4 ml-2">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="h6 poke-number">#65</div>
+                        </div>
+                        <div class="row">
+                        <div class="h5 poke-name">Alakazam</div>
+                        </div>
+                        <div class="row">
+                            <div class="h6 poke-type btn fw-bold">Psychic</div>
+                        </div> 
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center poke-card p-3 border-0 shadow-sm mr-2 mt-4 ml-2">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="h6 poke-number">#65</div>
+                        </div>
+                        <div class="row">
+                        <div class="h5 poke-name">Alakazam</div>
+                        </div>
+                        <div class="row">
+                            <div class="h6 poke-type btn fw-bold">Psychic</div>
+                        </div> 
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center poke-card p-3 border-0 shadow-sm mr-2 mt-4 ml-2">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="h6 poke-number">#65</div>
+                        </div>
+                        <div class="row">
+                        <div class="h5 poke-name">Alakazam</div>
+                        </div>
+                        <div class="row">
+                            <div class="h6 poke-type btn fw-bold">Psychic</div>
+                        </div> 
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center poke-card p-3 border-0 shadow-sm mr-2 mt-4 ml-2">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="h6 poke-number">#65</div>
+                        </div>
+                        <div class="row">
+                        <div class="h5 poke-name">Alakazam</div>
+                        </div>
+                        <div class="row">
+                            <div class="h6 poke-type btn fw-bold">Psychic</div>
+                        </div> 
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 right-side">
+                <div class="card text-center poke-card-right p-3 border-0 shadow-sm">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png" class="position-absolute top-0 start-50 translate-middle" alt="...">
+                    <p class="poke-favorite position-absolute top-0 end-0">❤</p>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="h6 poke-number fw-bold ">#65</div>
+                        </div>
+                        <div class="row">
+                        <div class="h1 poke-name fw-bold">Alakazam</div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="h6 poke-type btn fw-bold">Psychic</div>
+                        </div>
+                        <ul class="nav nav-pills nav-fill">
+                            <li class="nav-item ">
+                                <a class="nav-link active bg-transparent border-bottom text-black fw-bold" aria-current="page" href="#">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Evolutions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Items</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">More</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="h4 mt-4 m-2 fw-bold">ABILITIES</div>
+                            <div class="col-6">
+                                <div class="h5 btn poke-ability ">Synchronize</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="h5 btn poke-ability">Magic Guard</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="h5 btn poke-ability">Inner Focus</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="h4 m-2 fw-bold">BASE STATS</div>
+                            <table class="charts-css column show-labels data-spacing-10" id="abilities-chart">
+                                    <tr>
+                                        <th scope="row"> HP </th>
+                                        <td style="--size: 0.7"> </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"> ATK </th>
+                                        <td style="--size: 0.6"> </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"> DEF </th>
+                                        <td style="--size: 0.3"> </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"> SPA </th>
+                                        <td style="--size: 0.5"> </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"> SPD </th>
+                                        <td style="--size: 0.4"> </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"> SPE </th>
+                                        <td style="--size: 0.2"> </td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+</body>
+</html>
